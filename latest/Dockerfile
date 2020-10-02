@@ -38,6 +38,9 @@ RUN set -x \
     # Install Python dependencies.
  && pipenv install --system --deploy
 
+RUN pip install httplib2==0.15.0 \
+    && pip install google-api-python-client==1.6
+
 RUN set -x \
     # Run as non-root user.
  && adduser -D -u 1896 duplicity \
